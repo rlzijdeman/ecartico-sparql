@@ -1,0 +1,19 @@
+#+ summary: Retrieve all painter related occupations
+#+ endpoint: https://data.create.humanities.uva.nl/sparql
+#+ tags:
+#+  - occupation
+#+  - subclass
+
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX schema: <http://schema.org/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT * WHERE {
+  ?occType rdf:type schema:Occupation ; # give all things of type Occupation (as defined by the schema.org vocabulary)
+      rdfs:label "painter"@en ; # of those things only return the occupation that bears the label "painter" in the English language
+      owl:superClassOf* ?paintersAndSuch . # next provide all the subclasses of the occupation (read: all things of which ?occType is a superclass)
+  ?paintersAndSuch rdfs:label ?occLabel . # give the labels of the subclasses. Note this could be labels in any language
+  FILTER (lang(?occLabel) = "nl") # filter out just the Dutch titles. (change 'nl' to 'en' for english labels, and see what happens)
+}
