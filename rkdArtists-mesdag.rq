@@ -1,13 +1,15 @@
 #+ summary: Get a person called "Hendrik Willem Mesdag"
 #+ endpoint: https://api.data.netwerkdigitaalerfgoed.nl/datasets/rkd/rkdartists/services/rkdartists/sparql
 #+ tags:  
-#+  -rkdArtists
+#+  - rkdArtists
 
 PREFIX schema: <http://schema.org/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
 SELECT * WHERE {
   ?person rdf:type schema:Person ; # get all things of type 'person'
           schema:name ?name . # provide the names of these persons
   FILTER regex(?name, "^Mesdag, H", "i") # only return results, where the name starts with "Mesdag, H"
-} LIMIT 10 # only provide the first 10 results
+} 
+LIMIT 10 # only provide the first 10 results
