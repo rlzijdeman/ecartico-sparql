@@ -1,7 +1,7 @@
 #+ summary: Retrieve persons having lived in a certain period
 #+ endpoint: https://data.create.humanities.uva.nl/sparql
 #+ tags:
-	- dates
+#+	- dates
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX schema: <http://schema.org/>
