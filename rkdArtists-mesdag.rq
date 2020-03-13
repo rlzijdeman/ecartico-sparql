@@ -1,6 +1,7 @@
 #+ summary: Get a person called "Hendrik Willem Mesdag"
 #+ endpoint: https://api.data.netwerkdigitaalerfgoed.nl/datasets/rkd/rkdartists/services/rkdartists/sparql
-#+ tags:  rkdArtists
+#+ tags:  
+#+  -rkdArtists
 
 PREFIX schema: <http://schema.org/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
