@@ -2,11 +2,13 @@
 #+ endpoint: https://data.create.humanities.uva.nl/sparql
 #+ tags:
 #+	- dates
+
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX schema: <http://schema.org/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
 SELECT * WHERE {
   ?person a schema:Person ; # give me all things that are of type 'Person' as defined by the schema.org vocabulary and label that 'person'
   schema:birthDate ?birthDate ; # for these 'person's (things) provide me their birthdate;
